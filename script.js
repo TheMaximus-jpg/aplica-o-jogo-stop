@@ -27,6 +27,15 @@ roundContador.innerText=`${round}`;
 pointsContador.innerText=`${totalPoints}`;
 let activated=false;
 
+window.onload= () =>{
+  window.alert("BEM-VINDO AO JOGO STOP/ADEDONHA!!!\n\nREGRAS:\n\n1. O jogador deve inserir palavras que começam com a letra escolhida;\n\n2. O jogador deve colocar palavras que correspondem apenas à língua portuguesa;\n\n3. Se o jogador acertar uma caixa/tema, ele receberá 10 pontos; caso erre, não ganhará nenhum ponto;\n\n4. A cada rodada, a letra escolhida será aleatória;\n\n5. Se o jogador não apertar o botão 'enviar' até o timer chegar a zero, o timer validará as respostas que o jogador já inseriu e começará uma nova rodada;\n\n6. O jogador deve verificar se a palavra inserida está escrita de forma ortograficamente correta; caso contrário, não será compreendida.\n\n\nBom jogo e boa sorte!!");
+ 
+
+}
+
+
+
+
   
     function selectWord(){
         buttonResults.disabled=true;
@@ -93,7 +102,7 @@ let activated=false;
                         alfabetoHolder.style.borderStyle='solid';
                         alfabetoHolder.innerText=capitalChosenLetter;
                         contagemRegressiva();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-                        buttonResults.disabled=false;
+                        buttonResults.disabled=false; 
     
                     }, 4000);
     
@@ -342,13 +351,13 @@ let activated=false;
           this.value = this.value.replace(/\s/g, ''); 
         });
 
+        selectWord();
+
+  
+     
 
 
   
-        selectWord();
-
-
-    
        
 
 
@@ -359,8 +368,6 @@ let activated=false;
     
 
     
-    
-
-
+      
 
 
