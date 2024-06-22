@@ -219,23 +219,29 @@ window.onload= () =>{
       tempo=181;
       break;
       case 2:
-      tempo=121;
+      tempo=166;
       break;
       case 3:
-      tempo=81;
+      tempo=146;
       break;
       case 4:
-      tempo=61;
+      tempo=126;
       break;
       case 5:
-      tempo=31;
+      tempo=106;
       break;
       case 6:
-      tempo=16;
+      tempo=86;
       break;
-
+      case 7:
+      tempo=66;
+      break;
+      case 8:
+      tempo=46;
+      break;
+      
       default:
-      tempo=16;
+      tempo=26;
       break;
       
     }
