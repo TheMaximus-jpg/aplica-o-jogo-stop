@@ -177,13 +177,14 @@ window.onload= () =>{
     
     if(father.charAt(0) == chosenLetter || capitalFather.charAt(0) == capitalChosenLetter){
         verificaPalavra(fatherTextArea, hitN1);
-        
+
     }else{
         hitN1.innerText='Errou!';
     }
     
     if(animal.charAt(0) == chosenLetter || capitalAnimal.charAt(0) == capitalChosenLetter){
         verificaPalavra(animalTextArea, hitN2);
+
     }else{
         hitN2.innerText='Errou!';
     }
@@ -296,41 +297,40 @@ window.onload= () =>{
     
     }
     
-
-
-
-
-    async function verificaPalavra(insiraPalavra, hitOrMiss) {
+  
+      async function verificaPalavra(insiraPalavra, hitOrMiss) {
         const inputValue=insiraPalavra.value;
         const tinyInputValue=inputValue.toLowerCase();
       
-        try {
-          const url = `https://api.dicionario-aberto.net/word/${tinyInputValue}`;
-          const response = await fetch(url);
-          const data = await response.json();
-          if (data.length > 0) {
-            pointsArray.push(10);
-            console.log(pointsArray);
-            hitOrMiss.innerText='Acertou!';
-          } else {
-            hitOrMiss.innerText='Errou!';
+        if(inputValue.length == 1){
+          hitOrMiss.innerText='Errou!';
+        }else{
+          try {
+            const url = `https://api.dicionario-aberto.net/word/${tinyInputValue}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            if (data.length > 0) {
+              pointsArray.push(10);
+              console.log(pointsArray);
+              hitOrMiss.innerText='Acertou!';
+            } else {
+              hitOrMiss.innerText='Errou!';
+            }
+          } catch (error) {
+            console.error('Erro na verificação:', error);
           }
-        } catch (error) {
-          console.error('Erro na verificação:', error);
+  
+          const resultadoPontos=pointsArray.reduce((acc, valor) => {
+              return acc + valor;
+          
+          }, 0);
+  
+  
+          pointsContador.innerText=`${resultadoPontos}`;
         }
-
-        const resultadoPontos=pointsArray.reduce((acc, valor) => {
-            return acc + valor;
-        
-        }, 0);
-
-
-        pointsContador.innerText=`${resultadoPontos}`;
+     
 
       }
-      
-    
-    
     
     
     
